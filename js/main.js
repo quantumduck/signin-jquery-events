@@ -3,13 +3,15 @@ $(function() {
   $('.signin').on('click', function() {
     $('.modal').fadeIn();
   });
-  $('.close').on('click', function() {
+  $('.modal, .close').on('click', function() {
     $('.modal').fadeOut();
   });
-  $('.submit').on('click', function() {
+  $('.submit').on('click', function(e) {
+    e.stopPropagation();
     $('.modal input').addClass('error');
   });
-  $('.modal input').on('click', function() {
+  $('.modal input').on('click', function(e) {
+    e.stopPropagation();
     $(this).removeClass('error');
   });
 });
