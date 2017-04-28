@@ -1,6 +1,8 @@
 $(function() {
   flashMessage('Ready!');
-  var formTags = $('.modal, .modal *');
+  $('.signin').on('click', function() {
+    $('.modal').fadeIn();
+  })
   fadeInTags(formTags);
 });
 
