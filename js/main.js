@@ -2,8 +2,16 @@ $(function() {
   flashMessage('Ready!');
   $('.signin').on('click', function() {
     $('.modal').fadeIn();
-  })
-  fadeInTags(formTags);
+  });
+  $('.close').on('click', function() {
+    $('.modal').fadeOut();
+  });
+  $('.submit').on('click', function() {
+    $('.modal input').addClass('error');
+  });
+  $('.modal input').on('click', function() {
+    $(this).removeClass('error');
+  });
 });
 
 function flashMessage(message) {
